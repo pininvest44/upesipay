@@ -1,0 +1,17 @@
+{
+  "name": "upesipay-bulk-stk",
+  "version": "1.0.0",
+  "description": "Bulk M-PESA STK Push dispatcher using UpesiPay API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
