@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: upesipay-bulk-stk
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: UPESIPAY_AUTH_TOKEN
+        sync: false
+      - key: UPESIPAY_CHANNEL_ID
+        value: wallet
+      - key: UPESIPAY_CALLBACK_URL
+        sync: false
