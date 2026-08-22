@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UpesiPay Bulk STK Push</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>UpesiPay Bulk STK Push</h2>
+
+    <form id="stkForm">
+      <div class="form-group">
+        <label for="phoneNumbers">Phone Numbers (one per line or comma-separated)</label>
+        <textarea id="phoneNumbers" rows="6" placeholder="254712345678&#10;0722000000&#10;0733000000" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="amount">Amount (KES)</label>
+          <input type="number" id="amount" min="1" max="500000" placeholder="e.g. 500" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reference">Reference / Purpose</label>
+          <input type="text" id="reference" placeholder="e.g. Invoice #1024">
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn">Start Bulk Push (15 req/min)</button>
+    </form>
+
+    <div id="statusIndicator" class="status hidden">
+      <p id="statusText">Processing requests at 15 req/min. Please wait...</p>
+    </div>
+
+    <div class="logs-section">
+      <h3>Execution Logs</h3>
+      <table id="logsTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Phone</th>
+            <th>Reference</th>
+            <th>Status</th>
+            <th>Details / Checkout ID</th>
+          </tr>
+        </thead>
+        <tbody id="logsBody">
+          <tr>
+            <td colspan="5" class="empty-log">No transactions executed yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
